@@ -1,5 +1,5 @@
 body{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url("/img/login.png");
+    background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),url("../img/login.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
