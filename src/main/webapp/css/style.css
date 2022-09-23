@@ -69,3 +69,10 @@ body{
     font-size: 1.5rem;
 }
 
+#login-error{
+    background-color: #ff4c4c;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 10px;
+}

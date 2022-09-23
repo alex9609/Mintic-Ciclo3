@@ -1,6 +1,6 @@
 package test;
 import  beans.Vehiculo;
-import conecction.DBConnection;
+import conection.DBConnection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;

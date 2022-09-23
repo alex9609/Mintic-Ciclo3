@@ -7,17 +7,17 @@ public class Usuario {
     private String nombre;
     private String apellido;
     private String email;
-    private String premium;
+    private String metodo_pago;
     private double saldo;
     private boolean premmium;
 
-    public Usuario(String username, String contrasenia, String nombre, String apellido, String email, String premium, double saldo, boolean premmium) {
+    public Usuario(String username, String contrasenia, String nombre, String apellido, String email, String metodo_pago, double saldo, boolean premmium) {
         this.username = username;
         this.contrasenia = contrasenia;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
-        this.premium = premium;
+        this.metodo_pago = metodo_pago;
         this.saldo = saldo;
         this.premmium = premmium;
     }
@@ -62,12 +62,12 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getPremium() {
-        return premium;
+    public String getMetodo_pago() {
+        return metodo_pago;
     }
 
-    public void setPremium(String premium) {
-        this.premium = premium;
+    public void setMetodo_pago(String metodo_pago) {
+        this.metodo_pago = metodo_pago;
     }
 
     public double getSaldo() {
@@ -94,7 +94,7 @@ public class Usuario {
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", email='" + email + '\'' +
-                ", premium='" + premium + '\'' +
+                ", metodo pago='" + metodo_pago + '\'' +
                 ", saldo=" + saldo +
                 ", premmium=" + premmium +
                 '}';

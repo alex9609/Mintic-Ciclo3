@@ -3,6 +3,12 @@ nav{
     margin: 0px;
 }
 
+main{
+    margin-top: 0;
+    background-color: #efe9e5;;
+}
+
+
 p{
     text-align: center;
 }
@@ -40,13 +46,12 @@ p{
 
 .autos{
     margin-top: 20px;
-    width: 100%;
     width: 90%;
 }
 
 .auto{
     padding: 10px;
-    background-color: rgb(202, 204, 209);
+    box-shadow: 2px 2px 2px 2px darkgray;
     border-radius: 5px;
 }
 .auto:hover{

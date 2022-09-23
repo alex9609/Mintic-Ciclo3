@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/index.js"></script>
     <title>Rent car</title>
 </head>
 <body>
@@ -20,18 +22,21 @@
             </div>
             <!--Login -->
             <div class="col segundo d-flex align-items-center justify-content-center">
-                <form>
+                <form id="form-login">
                     <div class="mb-4">
-                      <input class="input" placeholder="Usuario">
+                      <input class="input" id="usuario" placeholder="Usuario">
                     </div>
                     <div class="mb-3">
-                      <input class="input"  type="password" placeholder="Contraseña">
+                      <input class="input"  id="contrasenia"  type="password" placeholder="Contraseña">
+                    </div>
+                    <div id="login-error" class="mb-3 d-none" role="alert">
+                        Usuario o contraseña incorrecto
                     </div>
                     <div class="mb-4">
-                        <a class="register" href="#">No tengo una cuenta. Registrarme</a>
+                        <a class="register" href="register.html">No tengo una cuenta. Registrarme</a>
                     </div>
                     <div class="login-btn d-flex justify-content-center">
-                        <button type="submit" class="btn">Login</button>
+                        <button type="submit" class="btn" id="entrar">Login</button>
                     </div>
                   </form>
             </div>

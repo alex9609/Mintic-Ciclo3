@@ -1,6 +1,6 @@
 package servlets;
 
-import conecction.DBConnection;
+import conection.DBConnection;
 
 import java.io.IOException;
 import java.io.PrintWriter;
