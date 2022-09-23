@@ -59,20 +59,19 @@ function registrarUsuario(){
             }),
             success: function(result){
                 let parsedResult = JSON.parse(result);
+                console.log(parsedResult)
                 if(parsedResult != false){
                     $("#login-error").addClass("d-none");
-                    let username = parsedResult['username'];
                     document.location.href = "index.html";
                 }else{
-                    $("#login-error").removeClass("d-none");
+                    $("#create-error").removeClass("d-none");
                 }
             }
     
         });
     }else{
         $("#create-error").removeClass("d-none");
-        message = "Datos invalidos verifique por favor"
+        console.log("Datos invalidos verifique por favor")
     }
-    console.log(message)
-    
+
 }
