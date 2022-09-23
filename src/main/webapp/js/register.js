@@ -61,17 +61,24 @@ function registrarUsuario(){
                 let parsedResult = JSON.parse(result);
                 console.log(parsedResult)
                 if(parsedResult != false){
-                    $("#login-error").addClass("d-none");
-                    document.location.href = "index.html";
+                    $("#create-error").addClass("d-none");
+                    $("#success-info").removeClass("d-none");
+                    setTimeout(function(){
+                        document.location.href = "index.html";
+                    },2000);
                 }else{
+                    document.getElementById("create-error").innerHTML = "Error al crear usuario, usuario ya existe";
                     $("#create-error").removeClass("d-none");
+                    setTimeout(function(){
+                        document.location.href = "index.html";
+                    },2500);
                 }
             }
     
         });
     }else{
+        document.getElementById("create-error").innerHTML = "Datos invalidos, rellene todos los campos o asegurese que esten bien escritos";
         $("#create-error").removeClass("d-none");
-        console.log("Datos invalidos verifique por favor")
     }
 
 }

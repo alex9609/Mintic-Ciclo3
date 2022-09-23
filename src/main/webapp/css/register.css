@@ -97,3 +97,11 @@ body{
     font-weight: bold;
     border-radius: 10px;
 }
+
+#success-info{
+    background-color: green;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 10px;
+}
