@@ -8,4 +8,6 @@ public interface IUsuarioController {
                     String apellido, String email, float saldo,String meotdo, int suscripcion);
 
     String getUserByUsername(String username);
+
+    String pedir(String username);
 }

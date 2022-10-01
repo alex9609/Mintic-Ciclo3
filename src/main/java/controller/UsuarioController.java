@@ -133,4 +133,50 @@ public class UsuarioController implements IUsuarioController {
         }
         return "false";
     }
+
+    @Override
+    public String pedir(String username) {
+
+        Gson gson = new Gson();
+
+        DBConnection connection = new DBConnection();
+        String sql = "Select * from usuario where username = '" + username + "'";
+
+        try{
+            Statement statement = connection.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while(resultSet.next()){
+                String nombre = resultSet.getString("nombre");
+                String contrasenia = resultSet.getString("contrasenia");
+                String apellido = resultSet.getString("apellido");
+                String email = resultSet.getString("email");
+                double saldo = resultSet.getDouble("saldo");
+                boolean premmium = resultSet.getBoolean("premmium");
+                String metodo_pago = resultSet.getString("metodo_pago");
+
+                Usuario usuario = new Usuario(
+                        username,
+                        contrasenia,
+                        nombre,
+                        apellido,
+                        email,
+                        metodo_pago,
+                        saldo,
+                        premmium
+                );
+
+                return gson.toJson(usuario);
+            }
+        }catch (SQLException ex){
+            System.out.println("Error: ");
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getCause());
+        }finally {
+            connection.desconectar();
+        }
+
+        return "false";
+    }
+
 }

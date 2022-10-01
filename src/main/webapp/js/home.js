@@ -22,7 +22,7 @@ function autenticarUsuario(){
             let parsedResult = JSON.parse(result);
             if(parsedResult != false){
                 let username = parsedResult['username'];
-                document.getElementById("auto1").innerHTML = "<img class=\"fotoauto\" src=\""+ imagen +"\">"
+                //document.getElementById("auto1").innerHTML = "<img class=\"fotoauto\" src=\""+ imagen +"\">"
                 console.log(username)
             }else{
                 console.log("error")
