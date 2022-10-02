@@ -7,4 +7,6 @@ import java.util.List;
 public interface IVehiculoController {
 
     String listarVehiculos();
+
+    String encontrarVehiculo_Placa(String placa);
 }

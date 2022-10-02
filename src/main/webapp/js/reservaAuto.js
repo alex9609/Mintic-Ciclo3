@@ -1,10 +1,5 @@
 
-var placa = new URL(location.href).searchParams.get("placa");
-
 $(document).ready(function(){
-
-    
-    console.log(placa)
 
     const today = new Date();
     const yyyy = today.getFullYear();
@@ -60,7 +55,7 @@ function alquilarVehiculo(alquilar){
         var diff_in_millisenconds = new Date(fecha_fin) - new Date(fecha_inicio);
         var diff_in_days = (diff_in_millisenconds / day_as_milliseconds)+1;
 
-        precio = diff_in_days * 120;
+        //precio = diff_in_days * dia;
 
         //Diferencia de dias
         document.getElementById("costo").innerHTML = "Total a pagar: " + diff_in_days;

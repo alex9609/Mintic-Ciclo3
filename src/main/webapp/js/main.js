@@ -89,7 +89,7 @@ function mostrarVehiculos(vehiculos){
                             vehiculo.anio+
                         "</li>"+
                         "<li>"+
-                            vehiculo.puertas+" asientos"+
+                            vehiculo.puertas+" puertas"+
                         "</li>"+
                     "</ul>"+
                 "</div>"+
