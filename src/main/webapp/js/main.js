@@ -12,9 +12,6 @@ $(document).ready(function(){
     getUsuario().then(function(){
 
         $("#mi-perfil-btn").attr("href","profile.html?username="+username);
-
-        $("#user-saldo").html(user.saldo.toFixed(2) + "$");
-
     })
 
     getVehiculos()
@@ -80,7 +77,7 @@ function mostrarVehiculos(vehiculos){
             "<div class='row'>"+
                 "<div class='col'>"+
                     "<h3>"+vehiculo.marca+ " "+vehiculo.modelo+"</h3>"+
-                    "<h5>Lujo</h5>"+
+                    "<h5>"+vehiculo.tipo+"</h5>"+
                 "</div>"+
                 "<div class='col'>"+
                     "<h4>Caracteristicas</h4>"+
@@ -92,26 +89,19 @@ function mostrarVehiculos(vehiculos){
                             vehiculo.anio+
                         "</li>"+
                         "<li>"+
-                            "4 asientos"+
+                            vehiculo.puertas+" asientos"+
                         "</li>"+
                     "</ul>"+
                 "</div>"+
             "</div>"+
             "<div class='row'>"+
                 "<div class='col d-flex justify-content-center '>"+
-                    "<a class='reserva-auto' href='index.html'>"+
+                    "<a class='reserva-auto' href='reservaAuto.html?placa="+vehiculo.placa+"'>"+
                         "<img class='fotoauto' src='img/autos/"+ vehiculo.url_imagen +"'>"+
                     "</a>"+
                 "</div>"+
+                "<h5 class='precio'>Precio : $"+vehiculo.precio_dia+" cop/día</h5>"+
             "</div>"+
-            //boton
-            /*
-            "<div class='row'>"+
-                "<div class='col d-flex justify-content-center mt-4 mb-3'>"+
-                "<button type='button' class='btn btn-primary'>Reservar</button>"+
-                "</div>"+
-            "</div>"+
-            */
         "</div>"+
     "</div>";
         //

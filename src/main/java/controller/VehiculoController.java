@@ -31,19 +31,25 @@ public class VehiculoController implements IVehiculoController {
                 String placa = rs.getString("placa");
                 String marca = rs.getString("marca");
                 String modelo = rs.getString("modelo");
+                int puertas = rs.getInt("puertas");
+                String tipo = rs.getString("tipo");
                 int anio = rs.getInt("anio");
                 String motor = rs.getString("motor");
-                String novedad = rs.getString("novedad");
                 String url_imagen = rs.getString("url_imagen");
+                String novedad = rs.getString("novedad");
+                int precio_dia = rs.getInt("precio_dia");
 
                 Vehiculo vehiculo = new Vehiculo(
                         placa,
                         marca,
                         modelo,
+                        puertas,
+                        tipo,
                         anio,
                         motor,
+                        url_imagen,
                         novedad,
-                        url_imagen
+                        precio_dia
                 );
 
                 listaVehiculos.add(gson.toJson(vehiculo));

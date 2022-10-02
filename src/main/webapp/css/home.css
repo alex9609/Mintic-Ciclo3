@@ -76,3 +76,18 @@ h3{
 .fotoauto{
     width: 290px;
 }
+
+.fotoauto:hover{
+    width: 320px;
+}
+
+.precio{
+    text-align: center;
+    margin-top: 10px;
+    background-color: #343a40;
+    border-radius: 10px;
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+    color: #FFFFFF;
+}
