@@ -89,6 +89,43 @@ public class UsuarioController implements IUsuarioController {
     }
 
     @Override
+    public String update(String username_old,String username_new, String contrasenia, String nombre, String apellido, String email, float saldo, String metodo, int suscripcion) {
+        Gson gson = new Gson();
+
+        DBConnection connection = new DBConnection();
+
+        String respuesta = "false";
+
+        String sql = "UPDATE usuario " +
+                "SET username = '" + username_new + "', " +
+                "contrasenia = '" + contrasenia + "', " +
+                "nombre = '" + nombre + "', " +
+                "apellido = '" + apellido + "', " +
+                "email = '" + email + "', " +
+                "saldo = '" + saldo + "', " +
+                "metodo_pago = '" + metodo + "', " +
+                "premmium = '" + suscripcion + "', " +
+                "saldo = '" + saldo + "' WHERE username = '" + username_old+"'";
+
+        try{
+            if(getUserByUsername(username_old).equals("false")){
+                respuesta = "false";
+            }else{
+                Statement st = connection.getConnection().createStatement();
+                st.executeUpdate(sql);
+                respuesta = "true";
+            }
+        }catch (SQLException ex){
+            System.out.println("Error: ");
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getCause());
+        }finally {
+            connection.desconectar();
+        }
+        return respuesta;
+    }
+
+    @Override
     public String getUserByUsername(String username) {
         Gson gson = new Gson();
 
@@ -168,6 +205,30 @@ public class UsuarioController implements IUsuarioController {
 
                 return gson.toJson(usuario);
             }
+        }catch (SQLException ex){
+            System.out.println("Error: ");
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getCause());
+        }finally {
+            connection.desconectar();
+        }
+
+        return "false";
+    }
+
+    @Override
+    public String delete(String username) {
+        Gson gson = new Gson();
+
+        DBConnection connection = new DBConnection();
+
+        String sql = "DELETE  from usuario where username = '" + username + "'";
+
+        try{
+            Statement statement = connection.getConnection().createStatement();
+            statement.executeUpdate(sql);
+
+            return "true";
         }catch (SQLException ex){
             System.out.println("Error: ");
             System.out.println(ex.getMessage());

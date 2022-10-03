@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/profile.css">
+    
+    <script src="https://kit.fontawesome.com/d31130226f.js" crossorigin="anonymous"></script>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Popper js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="js/profile.js"></script>
+    <title>Rent car</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark  me-0 ms-0">
+        <a  class="titulo ms-2" id="titulo">Rent a car</a>
+        <div id="user-data-profile">
+            <div class="dropdown ajustes">
+                <a class="btn btn-primary dropdown-toggle" href="#" role="button" 
+                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  Ajustes
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item"  id="mi-perfil-btn">Mi perfil</a></li>
+                  <li><a class="dropdown-item"  id="salir-btn" href="index.html">Salir</a></li>
+                </ul>
+              </div>
+        </div>
+    </nav>
+<div class="container general">
+    <div class="mb-4 disfruta-viaja" >
+        <label>Perfil usuario</label>
+    </div>
+    <form id="update">
+        <div class="info">
+            <div class="row">
+                <!--usuario, contrasenia, nombre,apellido,email,saldo,metodo,suscripcion-->
+                <div class="col">
+                        <div class="mb-4 d-flex flex-column">
+                            <label class="rentcar-title">Usuario</label>
+                            <input class="input" id="usuario" placeholder="Usuario">
+                        </div>
+                        <div class="mb-3 d-flex flex-column">
+                            <label class="rentcar-title">Constraseña</label>
+                            <input class="input"  id="contrasenia"   placeholder="Contraseña">
+                        </div>
+                        <div class="mb-3 d-flex flex-column">
+                            <label class="rentcar-title">Confirmación de contraseña</label>
+                            <input class="input"  id="confirmacion"   placeholder="Confirmación">
+                        </div>
+                        <div class="mb-4  d-flex flex-column">
+                            <label class="rentcar-title">Nombre</label>
+                            <input class="input" id="nombre" placeholder="Nombre">
+                        </div>
+                        <div class="mb-3 d-flex flex-column">
+                            <label class="rentcar-title">Apellido</label>
+                            <input class="input"  id="apellido" placeholder="Apellidos">
+                        </div>
+                </div>
+                <div class="col">
+                        <div class="mb-4 d-flex flex-column">
+                            <label class="rentcar-title me-3">Email</label>
+                            <input class="input" id="email" type="email" placeholder="Email">
+                        </div>
+                        <div class="mb-3 d-flex flex-column">
+                            <label class="rentcar-title me-3">Saldo</label>
+                            <input class="input"  id="saldo" type="number" placeholder="Saldo">
+                        </div>
+                        <div class="mb-4 d-flex flex-column">
+                            <label class="rentcar-title">Método pago</label>
+                            <select class="input" id="metodo">
+                                <option value="" selected>Seleccione método</option>
+                                <option value="efectivo">Efectivo</option>
+                                <option value="debito">Debito</option>
+                                <option value="credito">Credito</option>
+                              </select>
+                            
+                        </div>
+                        <div class="mb-3 d-flex flex-column">
+                            <label class="rentcar-title">Suscripción</label>
+                            <select class="input" id="suscripcion">
+                                <option value="" selected>Seleccione tipo</option>
+                                <option value="bronce">Bronce</option>
+                                <option value="plata">Plata</option>
+                                <option value="oro">Oro</option>
+                              </select>
+                        </div>
+                </div>
+            </div>
+            <div id="create-error" class="mb-3 d-none" role="alert"></div>
+            <div id="success-info" class="mb-3 d-none success" role="alert">Usuario actualizado con exito</div>
+            <div id="success-delete" class="mb-3 d-none success" role="alert">Usuario eliminado con exito</div>
+            <div class="row d-flex justify-content-center">
+                <button type="submit" class="btn btn-update" id="actualizar">actualizar</button>
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                <button type="button" class="btn btn-eliminar" id="eliminar">Eliminar cuenta</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

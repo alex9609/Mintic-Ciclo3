@@ -1,16 +1,10 @@
-
-
 var username = new URL(location.href).searchParams.get("username");
-var user;
+
 
 $(document).ready(function(){
 
-/**$(function (){
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-**/
+    document.getElementById("titulo").setAttribute("href","home.html?username="+username);
     getUsuario().then(function(){
-
         $("#mi-perfil-btn").attr("href","profile.html?username="+username);
     })
 
@@ -96,7 +90,7 @@ function mostrarVehiculos(vehiculos){
             "</div>"+
             "<div class='row'>"+
                 "<div class='col d-flex justify-content-center '>"+
-                    "<a class='reserva-auto' href='reservaAuto.html?placa="+vehiculo.placa+"'>"+
+                    "<a class='reserva-auto' href='reservaAuto.html?username="+username+"&placa="+vehiculo.placa+"'>"+
                         "<img class='fotoauto' src='img/autos/"+ vehiculo.url_imagen +"'>"+
                     "</a>"+
                 "</div>"+

@@ -55,10 +55,10 @@ function alquilarVehiculo(alquilar){
         var diff_in_millisenconds = new Date(fecha_fin) - new Date(fecha_inicio);
         var diff_in_days = (diff_in_millisenconds / day_as_milliseconds)+1;
 
-        //precio = diff_in_days * dia;
+        precio = diff_in_days * $("#precio-dia").val();
 
         //Diferencia de dias
-        document.getElementById("costo").innerHTML = "Total a pagar: " + diff_in_days;
+        document.getElementById("costo").innerHTML = "Total a pagar: " + precio;
         $("#costo").removeClass("d-none");
         $("#alquilar").removeClass("d-none");
 

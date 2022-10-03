@@ -1,8 +1,9 @@
-
 var placa = new URL(location.href).searchParams.get("placa");
+var username = new URL(location.href).searchParams.get("username");
 
 $(document).ready(function(){
-
+    document.getElementById("titulo").setAttribute("href","home.html?username="+username);
+    $("#mi-perfil-btn").attr("href","profile.html?username="+username);
     getInformacionVehiculo();
 });
 
@@ -18,7 +19,6 @@ function getInformacionVehiculo(){
             let parsedResult = JSON.parse(result);
             if(parsedResult != false){
                 mostrarVehiculo(parsedResult);
-                console.log(parsedResult)
             }else{
                 console.log("Error trayendo la información")
             }
@@ -35,8 +35,8 @@ function mostrarVehiculo(vehiculo){
     document.getElementById("anio").innerHTML = "Año : " + vehiculo.anio;
     document.getElementById("disponible").innerHTML = "Novedad : " + vehiculo.novedad;
     document.getElementById("puertas").innerHTML = "Puertas : " + vehiculo.puertas;
+    document.getElementById("precio").innerHTML = "Precio día : " + vehiculo.precio_dia;
+    document.getElementById("precio-dia").setAttribute("value", vehiculo.precio_dia);
+    
 
-    document.getElementById("precio-dia").innerHTML = "Total a pagar: " + vehiculo.precio_dia;
 }
-
-

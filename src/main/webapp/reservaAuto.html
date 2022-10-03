@@ -23,7 +23,7 @@
 <body>
     
     <nav class="navbar navbar-dark bg-dark  me-0 ms-0">
-        <a  class="titulo ms-2" href="navbar-brand" href="#">Rent a car</a>
+        <a  class="titulo ms-2" id="titulo">Rent a car</a>
         <div id="user-data-profile">
             <span class="badge badge-light mr-3" id="user-saldo"></span>
             <div class="dropdown ajustes">
@@ -71,6 +71,8 @@
                                             </li>
                                             <li id="puertas">
                                             </li>
+                                            <li id="precio">
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -95,8 +97,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    
-                                    <div id="precio-dia"></div>
+                                    <input type='number' id="precio-dia" class="d-none">
                                     <div id="costo" class="mt-3 d-none" role="alert"></div>
                                 </div>
                                 <div class="row d-flex justify-content-center mt-3">
